@@ -31,7 +31,7 @@ def vector_embedding():
         if len(st.session_state.embeddings) > 0:
             st.session_state.vectors = FAISS.from_documents(st.session_state.final_documents, st.session_state.embeddings)
         else:
-            print("Embeddings list is empty. Cannot create FAISS index.")
+            st.write("Embeddings list is empty. Cannot create FAISS index.")
 
 st.title("Document talk")
 llm = ChatNVIDIA(model="meta/llama3-70b-instruct")
